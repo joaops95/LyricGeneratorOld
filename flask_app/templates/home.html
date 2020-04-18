@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block content %}
+{{ super() }}
+
+ <div>
+  <form action="" method="POST">
+    {{ form.hidden_tag() }}
+      <h2>Temperature</h2>
+  
+      <p>
+        0
+          <input type="range" min="1" max="100" value= {{ form.temperature }}
+        10
+      <p>
+        <p>Low temperatures results in more predictable text.</p>
+        <p> Higher temperatures results in more surprising text.</p>
+        <p>Experiment to find the best setting.</p>
+        
+        <h2>Number of Characters</h2>
+        <p>How many characters i wan't to predict</p>
+      <p>
+        {{ form.characters }}
+      </p>
+      <h2>Starting Point</h2>
+      <p>Write a few sentences, or words, the program will predict the rest</p>
+      <p>
+        {{ form.lyrics(cols="45", rows="20") }}
+      </p>
+  <p>
+      <p>
+        {{ form.submit() }}
+      </p>
+  </p>
+  </form>
+ </div>
+
+
+
+
+{% endblock content %}
